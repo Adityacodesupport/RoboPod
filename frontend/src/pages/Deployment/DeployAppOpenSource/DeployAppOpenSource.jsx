@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './deployAppOpenSource.css'
-import Navbar from '../../../components/navbar/Navbar'
+import Navbar from '../../../components/Navbar/Navbar'
 import { Button } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';

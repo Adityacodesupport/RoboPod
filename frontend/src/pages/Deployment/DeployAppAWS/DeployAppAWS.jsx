@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Navbar from '../../../components/navbar/Navbar'
+import Navbar from '../../../components/Navbar/Navbar'
 import { Button } from '@mui/material';
 import './DeployAppAWS.css'
 

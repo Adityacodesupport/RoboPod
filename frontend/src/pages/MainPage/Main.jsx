@@ -3,7 +3,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { LogOut,setEmail,setName } from '../../features/User/userSlice'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import Navbar from '../../components/navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 import './Main.css'
 import { Button } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
