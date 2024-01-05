@@ -1,0 +1,130 @@
+.deployAppOpenSource-homePage{
+    height:100vh;
+    /* background-color:red; */
+}
+
+.deployAppOpenSource-mainPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #E3E9EE; 
+    height: 84%;
+    gap: 10px;
+    padding-top: 25px;
+}
+
+.deployAppOpenSource-mainPage h3{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.deployAppOpenSource-service-type{
+    width: 400px;
+    display: flex;
+    gap: 20px;
+}
+
+.deployAppOpenSource-Deployment-type{
+    display: flex;
+    gap: 75px;
+    width: 405px;
+}
+
+.deployAppOpenSource-App-Name{
+    display: flex;
+    gap: 85px;
+    align-items: center;
+    width: 405px;
+}
+.deployAppOpenSource-App-Name h3{
+    font-size: large;
+}
+
+.deployAppOpenSource-App-Name input {
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+  }
+
+.deployAppOpenSource-Image-Name{
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    width: 405px;
+}
+.deployAppOpenSource-Image-Name h3{
+    font-size: large;
+}
+
+.deployAppOpenSource-Image-Name input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppOpenSource-Port-Number{
+    display: flex;
+    gap: 140px;
+    align-items: center;
+    width: 405px;
+}
+
+.deployAppOpenSource-Port-Number h3{
+    font-size: large;
+}
+.deployAppOpenSource-Port-Number input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppOpenSource-Pods-Number{
+    display: flex;
+    gap: 133px;
+    align-items: center;
+    width: 405px;
+}
+.deployAppOpenSource-Pods-Number h3{
+    font-size: large;
+}
+
+.deployAppOpenSource-Pods-Number input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppOpenSource-Max-Unavailable {
+    display: flex;
+    gap: 41px;
+    align-items: center;
+    width: 419px;
+    /* background-color: aquamarine; */
+}
+
+.deployAppOpenSource-Max-Unavailable input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppOpenSource-mainPage button {
+    width: 10%;
+    margin-top: 13px;
+    height: 32px;
+    background-color: #49aef6;
+    border: black solid 3px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: #0D99FF;
+    cursor: pointer;
+  }
+
+
+.deployAppOpenSource-mainPage button:hover{
+    background-color: #0D99FF;
+}
+
+

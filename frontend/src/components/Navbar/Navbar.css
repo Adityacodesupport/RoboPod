@@ -1,0 +1,56 @@
+.main-Auth-nav-bar{
+    /* background-color: aquamarine; */
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    /* border-style:black 10px; */
+    border: 1px solid black;
+    width: 100%;
+    height: 80px;
+}
+
+.Main-left-nav{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: 5px;
+    width: 345px;
+}
+
+.main-Auth-nav-bar .Main-left-nav .LogoImage{
+    width: 130px;
+    height: 55px;
+    flex-shrink: 0;
+    margin-left: 35px;
+}
+
+.main-Auth-nav-bar .Main-left-nav .LogoText{
+    display: flex;
+    width: 191px;
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.main-right-nav{
+    DISPLAY: flex;
+    gap: 20px;
+    margin-right: 45PX;
+}
+
+.main-right-nav button{
+    background-color: #49aef6;
+    color: white;
+    border: black solid 3px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #000;
+    width: 80px;
+}
+
+.main-right-nav button:hover{
+    background-color: #0D99FF;
+}

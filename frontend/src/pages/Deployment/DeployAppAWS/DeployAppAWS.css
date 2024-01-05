@@ -1,0 +1,111 @@
+.deployAppAWS-homePage{
+    height:100vh;
+    /* background-color:red; */
+}
+
+.deployAppAWS-mainPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #E3E9EE; 
+    height: 84%;
+    gap: 10px;
+    padding-top: 25px;
+}
+
+.deployAppAWS-mainPage h3{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+}
+
+.deployAppAWS-service-type{
+    width: 406px;
+    display: flex;
+    gap: 15px;
+}
+
+
+.deployAppAWS-Cluster-Name{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    width: 409px;
+}
+
+.deployAppAWS-Cluster-Name input {
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+
+.deployAppAWS-Cluster-Name h3{
+    font-size:large;
+}
+
+.deployAppAWS-machine{
+    display: flex;
+    gap: 73px;
+    align-items: center;
+    width: 409px;
+}
+
+.deployAppAWS-machine input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.deployAppAWS-machine h3{
+    font-size: large;
+}
+.deployAppAWS-Node{
+    display: flex;
+    gap: 88px;
+    align-items: center;
+    width: 405px;
+}
+
+.deployAppAWS-Node h3{
+    font-size: large;
+}
+.deployAppAWS-Node input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.deployAppAWS-Max-Unavailable {
+    display: flex;
+    gap: 41px;
+    align-items: center;
+    width: 419px;
+    /* background-color: aquamarine; */
+}
+
+.deployAppAWS-Max-Unavailable input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppAWS-mainPage button {
+    width: 17%;
+    margin-top: 32px;
+    height: 52px;
+    background-color: #49aef6;
+    border: black solid 3px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: #0D99FF;
+    cursor: pointer;
+  }
+
+
+.deployAppAWS-mainPage button:hover{
+    background-color: #0D99FF;
+}
+
+

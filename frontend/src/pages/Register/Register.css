@@ -1,0 +1,176 @@
+.Auth-nav-bar{
+    /* background-color: aquamarine; */
+    display: flex;
+    width: 100%;
+    height: 80px;
+    /* justify-content: center; */
+    align-items: center;
+    /* border-style:black 10px; */
+    border: 1px solid black;
+}
+
+.Auth-nav-bar .LogoImage{
+    width: 130px;
+    height: 55px;
+    flex-shrink: 0;
+    margin-left: 35px;
+}
+
+.Auth-nav-bar .LogoText{
+    display: flex;
+    width: 191px;
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.Register-Main-Page {
+    display: flex;
+    justify-content: space-around;
+    background-color: blue;
+}
+.Register-Left-Page{
+background-color: white;
+width: 50%;
+border-left: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+/* border-right: 2px solid black; */
+padding-right: 10px;
+}
+
+.Register-Left-Page::after{
+    content: '';
+    height: 40%;
+    width: 3px;
+    position: absolute;
+    right: 49.5%;
+    top: 33%;
+    background-color: #000000;
+}
+
+
+
+.left-main-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.left-main-content{
+    margin-left: -40px;
+}
+
+.left-main-content ul{
+    /* display: flex; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    text-decoration: none;
+}
+
+.checkIcon{
+    margin-right: 10px;
+}
+
+
+.left-heading-item-lists{
+    display: flex;
+    align-items: center;
+    margin-left: 115px;
+    margin-top: 15px;
+}
+
+.Register-Right-Page{
+background-color: #E3F2FF;
+width: 50%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+
+
+.right-main-heading{
+    margin-top: 10px;
+    height: 80px;
+}
+
+.right-main-heading h1{
+    display: flex;
+    font-family: 'Inter';
+    width: 505px;
+    height: 96px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 72px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 54px; /* 168.75% */
+    letter-spacing: 0.96px;
+}
+.Register-Right-Page h6{
+    margin-left: 40%;
+    margin-top: 10px;
+}
+
+.Register-Right-Page h6 span Link{
+    color: #0D99FF;
+    cursor: pointer;
+    
+}
+
+.input-fields{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.input-fields button{
+    width: 52%;
+    margin-top: 60px;
+    height: 40px;
+    /* background-color: #0D99FF; */
+    border: black solid 3px;
+    /* color: white; */
+    border-radius: 10px;
+    border: 1px solid #000;
+    /* background: #0D99FF; */
+    cursor: pointer;
+}
+
+.Login-Input{
+    width: 50%;
+    margin-top: 25px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: #FFF;
+}
+
+.Register-submit-button{
+    background-color: #49aef6;
+    color: white;
+    border: 10px;
+}
+
+.Register-submit-button:hover{
+    background-color: #0D99FF;
+}
+
+::placeholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
