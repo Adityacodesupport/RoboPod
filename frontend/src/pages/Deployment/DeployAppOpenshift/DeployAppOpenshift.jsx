@@ -8,6 +8,8 @@ import Select from '@mui/material/Select';
 import { useState } from 'react';
 import './DeployAppOpenshift.css'
 
+
+
 const DeployAppOpenShift = () => {
     const [deploymentInfo,setDeploymentInfo] = useState({
         service:'open source',
@@ -29,8 +31,8 @@ const DeployAppOpenShift = () => {
                 <div className="deployAppOpenShift-Deployment-type">
                     <div className="select-deployment-type">
                         <h3>Select Deployment Type</h3>
-                        <FormControl sx={{ m: 1, minWidth: 100 }} size="smalls">
-                            <InputLabel>Deployment Type</InputLabel>
+                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                            <InputLabel id="demo-simple-select-standard-label">Deployment Type</InputLabel>
                             <Select
                             label="Age"
                             onChange={async(e)=>{

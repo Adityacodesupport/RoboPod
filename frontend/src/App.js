@@ -12,9 +12,11 @@ import { Navigate } from 'react-router-dom'
 import DeployAppOpenSource from './pages/Deployment/DeployAppOpenSource/DeployAppOpenSource'
 import DeployAppAWS from './pages/Deployment/DeployAppAWS/DeployAppAWS'
 import DeployAppOpenShift from './pages/Deployment/DeployAppOpenshift/DeployAppOpenshift'
+import MyDeployments from './pages/MyDeployments/MyDeployments'
 
 const App = () => {
-  const isLoggedIn = useSelector((state)=>state.user.LoggedIn)
+  // const isLoggedIn = useSelector((state)=>state.user.LoggedIn
+  const isLoggedIn = true;
   return (
     <div>
       <Router>
@@ -24,9 +26,10 @@ const App = () => {
           <Route exact path='/register' element={<Register/>}></Route>
           <Route exact path='/main' element={<Main />}></Route>
           <Route exact path='/deployment-select' element={<SelectDeploymentType />}></Route>
-          <Route exact path='/deployment/deploy-app-opensorce' element={<DeployAppOpenSource />}></Route>
+          <Route exact path='/deployment/deploy-app-opensource' element={<DeployAppOpenSource />}></Route>
           <Route exact path='/deployment/deploy-app-aws' element={<DeployAppAWS />}></Route>
           <Route exact path='/deployment/deploy-app-openshift' element={<DeployAppOpenShift />}></Route>
+          <Route exact path='/deployment/MyDeployments' element={<MyDeployments />}></Route>
         </Routes>
       </Router>
     </div>

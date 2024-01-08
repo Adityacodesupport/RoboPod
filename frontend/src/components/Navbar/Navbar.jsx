@@ -19,7 +19,6 @@ const Navbar = () => {
           </div>
           <div className="main-right-nav">
             <AccountCircleIcon fontSize='large'/>
-            <AddIcon fontSize='large'/>
             {/* <NotificationsIcon fontSize='large'/> */}
                 <button onClick={()=>{
               dispatch(LogOut())
@@ -33,4 +32,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

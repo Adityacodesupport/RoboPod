@@ -16,11 +16,11 @@ const SelectDeploymentType = () => {
   return (
     <div className='main-select-deployment-type'>
         <div className="select-deployment-type-main-heading">
-            <h3>Deployment Type</h3>
+            <h3>DEPLOYMENT TYPE</h3>
         </div>
         <div className="select-deployment-type-select-button">
         <FormControl sx={{ m: 1, minWidth: 200 }} size="medium">
-            <InputLabel id="demo-select-small-label">Deployment type</InputLabel>
+            <InputLabel id="demo-select-small-label">Deployment Type</InputLabel>
             <Select
             labelId="demo-select-small-label"
             id="demo-select-small"
@@ -44,7 +44,7 @@ const SelectDeploymentType = () => {
                                 alert('Select Deployment Type....')
                             }
                             else if(DeploymentType=='Open Source'){
-                                navigate('/deployment/deploy-app-opensorce')
+                                navigate('/deployment/deploy-app-opensource')
                             }
                             else if(DeploymentType==='Aws')
                             {
@@ -61,7 +61,7 @@ const SelectDeploymentType = () => {
                         }}
                         size="lg"
                         variant="solid"
-                    >+ Start Deployment</Button>
+                    >START DEPLOYMENT</Button>
         </div>
     </div>
   )

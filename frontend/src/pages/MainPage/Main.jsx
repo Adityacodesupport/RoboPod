@@ -19,12 +19,12 @@ const Main = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  useEffect(()=>{
-    if(islogIn===false)
-    {
-      navigate('/register')
-    }
-  },[islogIn])
+  // useEffect(()=>{
+  //   if(islogIn===false)
+  //   {
+  //     navigate('/register')
+  //   }
+  // },[islogIn])
 
   return (
     <div className='Main-Home-Page'>

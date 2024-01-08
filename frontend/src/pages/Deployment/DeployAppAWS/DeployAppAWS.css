@@ -1,111 +1,146 @@
-.deployAppAWS-homePage{
-    height:100vh;
-    /* background-color:red; */
+.deployAppAWS-homePage {
+  height: 100vh;
+  /* background-color:red; */
 }
 
-.deployAppAWS-mainPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #E3E9EE; 
-    height: 84%;
-    gap: 10px;
-    padding-top: 25px;
+.deployAppAWS-mainPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f8f9fa;
+  height: 84%;
+  gap: 10px;
+  padding-top: 25px;
 }
 
-.deployAppAWS-mainPage h3{
-    font-family: 'Inter', sans-serif;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
+.deployAppAWS-mainPage h3 {
+  font-family: "Inter", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
 }
 
-.deployAppAWS-service-type{
-    width: 406px;
-    display: flex;
-    gap: 15px;
-}
-
-
-.deployAppAWS-Cluster-Name{
+.deployAppAWS-service-type {
+    width: 1000px;
     display: flex;
     gap: 30px;
-    align-items: center;
-    width: 409px;
+    font-size: xx-large;
+    font-family: sans-serif;
+}
+
+.deployAppAWS-Cluster-Name {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  width: 1000px;
 }
 
 .deployAppAWS-Cluster-Name input {
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 4px;
-  }
-
-.deployAppAWS-Cluster-Name h3{
-    font-size:large;
+  height: 23px;
+  border: 1px solid black;
+  border-radius: 4px;
 }
 
-.deployAppAWS-machine{
+.deployAppAWS-Cluster-Name h3 {
+  font-size: large;
+}
+
+.deployAppAWS-machine {
+  display: flex;
+  gap: 73px;
+  align-items: center;
+  width: 1000px;
+}
+
+.deployAppAWS-machine input {
+  height: 23px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.deployAppAWS-machine h3 {
+  font-size: large;
+}
+.deployAppAWS-Node {
+  display: flex;
+  gap: 88px;
+  align-items: center;
+  width: 1000px;
+}
+
+.deployAppAWS-cidr {
+  display: flex;
+  gap: 88px;
+  align-items: center;
+  width: 1000px;
+}
+.deployAppAWS-private-subnet {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  width: 1000px;
+}
+.deployAppAWS-public-subnet {
     display: flex;
-    gap: 73px;
+    gap: 11px;
     align-items: center;
-    width: 409px;
+    width: 1000px;
 }
 
-.deployAppAWS-machine input{
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 4px;
+.deployAppAWS-Node h3 {
+  font-size: large;
 }
-
-.deployAppAWS-machine h3{
-    font-size: large;
-}
-.deployAppAWS-Node{
-    display: flex;
-    gap: 88px;
-    align-items: center;
-    width: 405px;
-}
-
-.deployAppAWS-Node h3{
-    font-size: large;
-}
-.deployAppAWS-Node input{
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 4px;
+.deployAppAWS-Node input {
+  height: 23px;
+  border: 1px solid black;
+  border-radius: 4px;
 }
 
 .deployAppAWS-Max-Unavailable {
-    display: flex;
-    gap: 41px;
-    align-items: center;
-    width: 419px;
-    /* background-color: aquamarine; */
+  display: flex;
+  gap: 41px;
+  align-items: center;
+  width: 419px;
+  /* background-color: aquamarine; */
 }
 
-.deployAppAWS-Max-Unavailable input{
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 8px;
+.deployAppAWS-Max-Unavailable input {
+  height: 23px;
+  border: 1px solid black;
+  border-radius: 8px;
 }
 
 .deployAppAWS-mainPage button {
-    width: 17%;
-    margin-top: 32px;
-    height: 52px;
-    background-color: #49aef6;
-    border: black solid 3px;
-    color: white;
-    border-radius: 10px;
-    border: 1px solid #000;
-    background: #0D99FF;
-    cursor: pointer;
-  }
-
-
-.deployAppAWS-mainPage button:hover{
-    background-color: #0D99FF;
+  width: 17%;
+  margin-top: 32px;
+  height: 52px;
+  background-color: #49aef6;
+  border: black solid 3px;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #0d99ff;
+  cursor: pointer;
 }
 
+.deployAppAWS-mainPage button:hover {
+  background-color: #0d99ff;
+}
 
+.eks-description {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 477px;
+    height: 389px;
+    top: 170px;
+    left: 900px;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+    color: #000000;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 29.045px;
+    text-align: left;
+    z-index: auto;
+}
