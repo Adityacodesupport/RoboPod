@@ -55,7 +55,7 @@ const DeployAppOpenShift = () => {
     return (
         <div className='deployAppOpenShift-homePage'>
             <Navbar />    
-            {`${deploymentInfo.DeploymentType} ${deploymentInfo.DeploymentOption} ${deploymentInfo.AppName}  ${deploymentInfo.ImageName} ${deploymentInfo.ports} ${deploymentInfo.pods} ${deploymentInfo.maxUnavailable}`}        
+            {/* {`${deploymentInfo.DeploymentType} ${deploymentInfo.DeploymentOption} ${deploymentInfo.AppName}  ${deploymentInfo.ImageName} ${deploymentInfo.ports} ${deploymentInfo.pods} ${deploymentInfo.maxUnavailable}`}         */}
             <div className="deployAppOpenShift-mainPage">
                 <div className="deployAppOpenShift-service-type">
                     <span>SERVICE TYPE:</span><span>Open Shift</span>
