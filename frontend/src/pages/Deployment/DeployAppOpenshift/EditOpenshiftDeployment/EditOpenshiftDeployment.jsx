@@ -1,18 +1,21 @@
-import React from 'react'
-import Navbar from '../../../components/Navbar/Navbar'
+import React, { useEffect } from 'react'
+import Navbar from '../../../../components/Navbar/Navbar'
 import { Button } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
-import './DeployAppOpenshift.css'
+import './EditOpenshiftDeployment.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 
 
-const DeployAppOpenShift = () => {
+const EditOpenshiftDeployment = () => {
+    const location = useLocation()
+    const {state} = location;
     const nevigate = useNavigate()
 
     const [deploymentInfo,setDeploymentInfo] = useState({
@@ -25,6 +28,13 @@ const DeployAppOpenShift = () => {
         pods:'',
         maxUnavailable:''
     })
+
+    useEffect(()=>{
+        if(state)
+        {
+            console.log(state)
+        }
+    },[])
 
     const handleSubmit = () => {
         alert('Data Submission Started')
@@ -70,6 +80,7 @@ const DeployAppOpenShift = () => {
                             onChange={async(e)=>{
                                 setDeploymentInfo({...deploymentInfo,DeploymentType:e.target.value,DeploymentOption:'',maxUnavailable:''})
                             }}
+                            value={state.deployment}
                             >
                             <MenuItem value={'bluegreen'}>Blue Green</MenuItem>
                             <MenuItem value={'Rolling Update'}>Rolling Update</MenuItem>
@@ -78,7 +89,7 @@ const DeployAppOpenShift = () => {
                         </FormControl>
                     </div>
                     {
-                        deploymentInfo.DeploymentType==='bluegreen' &&
+                        deploymentInfo.DeploymentType==='bluegreen' || state.deployment==='bluegreen' &&
                     <div className="options-according-to-deployment-type">
                         <h3>Option</h3>
                         <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
@@ -88,6 +99,7 @@ const DeployAppOpenShift = () => {
                             onChange={(e)=>
                                 setDeploymentInfo({...deploymentInfo,DeploymentOption:e.target.value})
                             }
+                            value={state.environment}
                             >
                             <MenuItem value={'blue'}>Blue</MenuItem>
                             <MenuItem value={'green'}>Green</MenuItem>
@@ -98,19 +110,19 @@ const DeployAppOpenShift = () => {
                 </div>
                 <div className="deployAppOpenShift-App-Name">
                     <h3>App Name:</h3>
-                    <input type="text" onChange={e=>setDeploymentInfo({...deploymentInfo,AppName:e.target.value})} name="" id="" />
+                    <input type="text" onChange={e=>setDeploymentInfo({...deploymentInfo,AppName:e.target.value})} value={state.appname} name="" id="" />
                 </div>
                 <div className="deployAppOpenShift-Image-Name">
                     <h3>Image Name:</h3>
-                    <input type="text" onChange={e=>setDeploymentInfo({...deploymentInfo,ImageName:e.target.value})} name="" id="" />
+                    <input type="text" onChange={e=>setDeploymentInfo({...deploymentInfo,ImageName:e.target.value})} value={state.image} name="" id="" />
                 </div>
                 <div className="deployAppOpenShift-Port-Number">
                     <h3>Port:</h3>
-                    <input type="number" onChange={e=>setDeploymentInfo({...deploymentInfo,ports:e.target.value})} name="" id="" />
+                    <input type="number" onChange={e=>setDeploymentInfo({...deploymentInfo,ports:e.target.value})} value={state.port} name="" id="" />
                 </div>
                 <div className="deployAppOpenShift-Pods-Number">
                     <h3>Pods:</h3>
-                    <input type="number" onChange={e=>setDeploymentInfo({...deploymentInfo,pods:e.target.value})} name="" id="" />
+                    <input type="number" onChange={e=>setDeploymentInfo({...deploymentInfo,pods:e.target.value})} value={state.pods} name="" id="" />
                 </div>
                 {
                     deploymentInfo.DeploymentType === 'Rolling Update' && 
@@ -131,4 +143,4 @@ const DeployAppOpenShift = () => {
       )
 }
 
-export default DeployAppOpenShift
+export default EditOpenshiftDeployment

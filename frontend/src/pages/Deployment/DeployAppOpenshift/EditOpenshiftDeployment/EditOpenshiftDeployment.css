@@ -1,0 +1,120 @@
+.deployAppOpenShift-homePage{
+    height:100vh;
+    /* background-color:red; */
+}
+
+.deployAppOpenShift-mainPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #E3E9EE; 
+    height: 84%;
+    gap: 10px;
+    padding-top: 25px;
+}
+
+.deployAppOpenShift-mainPage h3{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.deployAppOpenShift-service-type{
+    width: 345px;
+    display: flex;
+    gap: 20px;
+}
+
+.deployAppOpenShift-Deployment-type{
+    display: flex;
+    gap: 73px;
+    width: 1000px;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    padding-right: 200px;
+}
+
+.deployAppOpenShift-App-Name{
+    display: flex;
+    gap: 85px;
+    align-items: center;
+    width: 405px;
+}
+
+.deployAppOpenShift-App-Name input {
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+  }
+
+.deployAppOpenShift-Image-Name{
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    width: 405px;
+}
+
+.deployAppOpenShift-Image-Name input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppOpenShift-Port-Number{
+    display: flex;
+    gap: 143px;
+    align-items: center;
+    width: 405px;
+}
+
+.deployAppOpenShift-Port-Number input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppOpenShift-Pods-Number{
+    display: flex;
+    gap: 138px;
+    align-items: center;
+    width: 405px;
+}
+
+.deployAppOpenShift-Pods-Number input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppOpenShift-Max-Unavailable {
+    display: flex;
+    gap: 41px;
+    align-items: center;
+    width: 419px;
+    /* background-color: aquamarine; */
+}
+
+.deployAppOpenShift-Max-Unavailable input{
+    height: 23px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.deployAppOpenShift-mainPage button {
+    width: 10%;
+    margin-top: 13px;
+    height: 32px;
+    background-color: #49aef6;
+    border: black solid 3px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: #0D99FF;
+    cursor: pointer;
+  }
+
+
+.deployAppOpenShift-mainPage button:hover{
+    background-color: #0d99ff
+}
