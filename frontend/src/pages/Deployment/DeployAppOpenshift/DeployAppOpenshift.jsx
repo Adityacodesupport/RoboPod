@@ -43,7 +43,7 @@ const DeployAppOpenShift = () => {
           .then((res)=>{
             alert('data submission completed')
             console.log(res)
-            alert(res)
+            alert(res.Routeurl)
             nevigate('/deployment/MyDeployments')
           })
           .catch(err=>{
