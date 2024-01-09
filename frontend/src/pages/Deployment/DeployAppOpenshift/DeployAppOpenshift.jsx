@@ -7,6 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
 import './DeployAppOpenshift.css'
+import axios from 'axios'
 
 
 
@@ -21,6 +22,31 @@ const DeployAppOpenShift = () => {
         pods:'',
         maxUnavailable:''
     })
+
+    const handleSubmit = () => {
+        alert('Data Submission Started')
+        axios.post('http://localhost:8000/api/k8s',
+        {
+            "service":"openshift",
+            "deployment":"recreate",
+            "appname":"nginx-recreate-1",
+            "image": "quay.io/practicalopenshift/hello-world",
+            "pods":"2",
+            "PortName":"first",
+            "port": "8080",
+            "userName":"aniket"
+          })
+          .then((res)=>{
+            alert('data submission completed')
+            console.log(res)
+            alert(res)
+          })
+          .catch(err=>{
+            console.log(err)
+          })
+    } 
+
+
     return (
         <div className='deployAppOpenShift-homePage'>
             <Navbar />            
@@ -90,7 +116,7 @@ const DeployAppOpenShift = () => {
                 <Button
                             className='deployAppOpenShift-Submit-Button'
                             color="primary"
-                            onClick={()=>alert(`${deploymentInfo.DeploymentType} ${deploymentInfo.DeploymentOption} ${deploymentInfo.AppName}  ${deploymentInfo.ImageName} ${deploymentInfo.ports} ${deploymentInfo.pods} ${deploymentInfo.maxUnavailable}`)}
+                            onClick={()=>handleSubmit()}
                             size="lg"
                             variant="solid"
                         >Submit</Button>
