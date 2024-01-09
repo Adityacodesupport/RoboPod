@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #E3E9EE; 
+    background-color: white; 
     height: 84%;
     gap: 10px;
     padding-top: 25px;
@@ -17,10 +17,11 @@
 .deployAppOpenShift-mainPage h3{
     font-family: 'Inter', sans-serif;
     font-family: 'Nunito Sans', sans-serif;
+    font-size: medium;
 }
 
 .deployAppOpenShift-service-type{
-    width: 345px;
+    width: 1000px;
     display: flex;
     gap: 20px;
 }
@@ -37,68 +38,95 @@
 
 .deployAppOpenShift-App-Name{
     display: flex;
-    gap: 85px;
+    gap: 59px;
     align-items: center;
-    width: 405px;
+    width: 1000px;
 }
 
+.deployAppOpenShift-App-Name h3{
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .deployAppOpenShift-App-Name input {
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 8px;
-  }
+    width: 30%;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 9px;
+}
 
 .deployAppOpenShift-Image-Name{
     display: flex;
-    gap: 70px;
+    gap: 42px;
     align-items: center;
-    width: 405px;
+    width: 1000px;
+}
+.deployAppOpenShift-Image-Name h3{
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .deployAppOpenShift-Image-Name input{
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 8px;
+    width: 30%;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 9px;
 }
 
 .deployAppOpenShift-Port-Number{
     display: flex;
-    gap: 143px;
+    gap: 113px;
     align-items: center;
-    width: 405px;
+    width: 1000px;
+}
+
+.deployAppOpenShift-Port-Number h3{
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .deployAppOpenShift-Port-Number input{
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 8px;
+    width: 30%;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 9px;
 }
 
 .deployAppOpenShift-Pods-Number{
     display: flex;
-    gap: 138px;
+    gap: 112px;
     align-items: center;
-    width: 405px;
+    width: 1000px;
+}
+
+.deployAppOpenShift-Pods-Number h3{
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .deployAppOpenShift-Pods-Number input{
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 8px;
+    width: 30%;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 9px;
 }
 
 .deployAppOpenShift-Max-Unavailable {
     display: flex;
-    gap: 41px;
+    gap: 10px;
     align-items: center;
-    width: 419px;
+    width: 1000px;
     /* background-color: aquamarine; */
 }
 
 .deployAppOpenShift-Max-Unavailable input{
-    height: 23px;
-    border: 1px solid black;
-    border-radius: 8px;
+    width: 30%;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 9px;
+}
+.deployAppOpenShift-Max-Unavailable h3{
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .deployAppOpenShift-mainPage button {

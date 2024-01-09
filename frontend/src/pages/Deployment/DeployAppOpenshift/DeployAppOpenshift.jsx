@@ -58,13 +58,13 @@ const DeployAppOpenShift = () => {
             {`${deploymentInfo.DeploymentType} ${deploymentInfo.DeploymentOption} ${deploymentInfo.AppName}  ${deploymentInfo.ImageName} ${deploymentInfo.ports} ${deploymentInfo.pods} ${deploymentInfo.maxUnavailable}`}        
             <div className="deployAppOpenShift-mainPage">
                 <div className="deployAppOpenShift-service-type">
-                    <span>Service Type:</span><span>Open Shift</span>
+                    <span>SERVICE TYPE:</span><span>Open Shift</span>
                 </div>
                 <div className="deployAppOpenShift-Deployment-type">
                     <div className="select-deployment-type">
-                        <h3>Select Deployment Type</h3>
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <InputLabel id="demo-simple-select-standard-label">Deployment Type</InputLabel>
+                        <h3>SELECT DEPLOYMENT TYPE</h3>
+                        <FormControl variant="standard" sx={{ m: 1, minWidth: 200 }}>
+                            <InputLabel id="demo-simple-select-standard-label">DEPLOYMENT TYPE</InputLabel>
                             <Select
                             label="Age"
                             onChange={async(e)=>{
@@ -80,12 +80,12 @@ const DeployAppOpenShift = () => {
                     {
                         deploymentInfo.DeploymentType==='bluegreen' &&
                     <div className="options-according-to-deployment-type">
-                        <h3>Option</h3>
-                        <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
-                            <InputLabel>Deployment Options</InputLabel>
+                        <h3>OPTIONS</h3>
+                        <FormControl variant= "standard" sx={{ m: 1, minWidth: 210 }}>
+                            <InputLabel id="demo-simple-select-standard-label">DEPLOYMENT OPTIONS</InputLabel>
                             <Select
                             label="Age"
-                            onChange={(e)=>
+                            onChange={async(e)=>
                                 setDeploymentInfo({...deploymentInfo,DeploymentOption:e.target.value})
                             }
                             >
@@ -98,19 +98,19 @@ const DeployAppOpenShift = () => {
                 </div>
                 <div className="deployAppOpenShift-App-Name">
                     <h3>App Name:</h3>
-                    <input type="text" onChange={e=>setDeploymentInfo({...deploymentInfo,AppName:e.target.value})} name="" id="" />
+                    <input type="text" placeholder='Enter Your App Name' onChange={e=>setDeploymentInfo({...deploymentInfo,AppName:e.target.value})} name="" id="" />
                 </div>
                 <div className="deployAppOpenShift-Image-Name">
                     <h3>Image Name:</h3>
-                    <input type="text" onChange={e=>setDeploymentInfo({...deploymentInfo,ImageName:e.target.value})} name="" id="" />
+                    <input type="text" placeholder='Enter Your Image Name' onChange={e=>setDeploymentInfo({...deploymentInfo,ImageName:e.target.value})} name="" id="" />
                 </div>
                 <div className="deployAppOpenShift-Port-Number">
                     <h3>Port:</h3>
-                    <input type="number" onChange={e=>setDeploymentInfo({...deploymentInfo,ports:e.target.value})} name="" id="" />
+                    <input type="number" placeholder='Enter Your Port Number' onChange={e=>setDeploymentInfo({...deploymentInfo,ports:e.target.value})} name="" id="" />
                 </div>
                 <div className="deployAppOpenShift-Pods-Number">
                     <h3>Pods:</h3>
-                    <input type="number" onChange={e=>setDeploymentInfo({...deploymentInfo,pods:e.target.value})} name="" id="" />
+                    <input type="number" placeholder='Enter Number Of Pods' onChange={e=>setDeploymentInfo({...deploymentInfo,pods:e.target.value})} name="" id="" />
                 </div>
                 {
                     deploymentInfo.DeploymentType === 'Rolling Update' && 
