@@ -24,20 +24,21 @@
     width: 1000px;
     display: flex;
     gap: 30px;
-    font-size: xx-large;
+    font-size: large;
     font-family: sans-serif;
 }
 
 .deployAppAWS-Cluster-Name {
   display: flex;
-  gap: 30px;
+  gap: 45px;
   align-items: center;
   width: 1000px;
 }
 
 .deployAppAWS-Cluster-Name input {
-  height: 23px;
-  border: 1px solid black;
+  width: 25%;
+  height: 26px;
+  border: 2px solid black;
   border-radius: 4px;
 }
 
@@ -47,14 +48,15 @@
 
 .deployAppAWS-machine {
   display: flex;
-  gap: 73px;
+  gap: 88px;
   align-items: center;
   width: 1000px;
 }
 
 .deployAppAWS-machine input {
-  height: 23px;
-  border: 1px solid black;
+  width: 25%;
+  height: 26px;
+  border: 2px solid black;
   border-radius: 4px;
 }
 
@@ -63,14 +65,14 @@
 }
 .deployAppAWS-Node {
   display: flex;
-  gap: 88px;
+  gap: 105px;
   align-items: center;
   width: 1000px;
 }
 
 .deployAppAWS-cidr {
   display: flex;
-  gap: 88px;
+  gap: 113px;
   align-items: center;
   width: 1000px;
 }
@@ -82,7 +84,7 @@
 }
 .deployAppAWS-public-subnet {
     display: flex;
-    gap: 11px;
+    gap: 18px;
     align-items: center;
     width: 1000px;
 }
@@ -91,8 +93,28 @@
   font-size: large;
 }
 .deployAppAWS-Node input {
-  height: 23px;
-  border: 1px solid black;
+  width: 25%;
+  height: 26px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.deployAppAWS-cidr input {
+  width: 25%;
+  height: 26px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+.deployAppAWS-private-subnet input {
+  width: 25%;
+  height: 26px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+.deployAppAWS-public-subnet input {
+  width: 25%;
+  height: 26px;
+  border: 2px solid black;
   border-radius: 4px;
 }
 
