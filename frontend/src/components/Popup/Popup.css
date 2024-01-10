@@ -6,6 +6,11 @@
   margin-bottom: 15px;
 }
 
+.pop-up-appName:hover{
+    color: blue; /* Change the color on hover as needed */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
 .popup-container {
     position: fixed;
     top: 0;
@@ -25,7 +30,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
-  .popup-btn {
+  /* .popup-btn {
     background-color: #0d99ff;
     color: white;
     font-size: 20px;
@@ -36,6 +41,18 @@
     padding: 5px 25px;
     margin-left: 166px;
     margin-top: 15px;
+  } */
+
+  .popup-btn {
+    background-color: #0d99ff;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 25px;
+    margin: 0% 40%;
   }
   
   .popup-btn:hover {

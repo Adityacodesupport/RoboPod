@@ -18,6 +18,7 @@ const EditOpenshiftDeployment = () => {
   const { state } = location;
   const navigate = useNavigate();
   const [isLoading,setIsLoading] = useState(false)
+  const [appUrl,setAppUrl] = useState('')
 
   const [deploymentInfo, setDeploymentInfo] = useState({
     service: "open shift",
@@ -58,6 +59,7 @@ const EditOpenshiftDeployment = () => {
         setIsLoading(false)
         alert("App Updated Successfull");
         console.log(res);
+        setAppUrl(res.data.Routeurl)
         alert(`Application Url is: ${res.data.Routeurl}`);
         navigate("/deployment/MyDeployments");
       })
