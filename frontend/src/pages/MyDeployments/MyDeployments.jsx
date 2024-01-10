@@ -27,6 +27,13 @@ const MyDeployments = () => {
         console.log(err);
       });
 
+    // Demo Data For Frontend 
+  //   const demoData = [ { service: "openshift", deployment: "recreate", appname: "nginx-recreate-final", image: "quay.io/practicalopenshift/hello-world", pods: "3", PortName: "first", port: "8080", userName: "aniket" },
+  //   { service: "openshift", deployment: "recreate", appname: "nginx-recreate-final", image: "quay.io/practicalopenshift/hello-world", pods: "3", PortName: "first", port: "8080", userName: "aniket" }
+  // ]
+
+  // setAppData(demoData)
+
   }, []);
 
   const handleDelete = (row) => {
