@@ -45,9 +45,9 @@ const DeployAppOpenShift = () => {
       })
       .then((res) => {
         setIsLoading(false)
-        alert("data submission completed");
+        alert("App Created Successfull");
         console.log(res);
-        alert(res.Routeurl);
+        alert(`Application Url :${res.data.Routeurl}`);
         navigate("/deployment/MyDeployments");
       })
       .catch((err) => {

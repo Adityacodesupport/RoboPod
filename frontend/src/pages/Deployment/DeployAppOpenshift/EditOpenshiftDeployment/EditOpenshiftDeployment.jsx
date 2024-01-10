@@ -10,22 +10,27 @@ import "./EditOpenshiftDeployment.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const EditOpenshiftDeployment = () => {
   const location = useLocation();
   const { state } = location;
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
+  const [isLoading,setIsLoading] = useState(false)
 
   const [deploymentInfo, setDeploymentInfo] = useState({
     service: "open shift",
-    DeploymentType: "",
-    DeploymentOption: "",
-    AppName: "",
-    ImageName: "",
-    ports: "",
-    pods: "",
-    maxUnavailable: "",
+    DeploymentType: state.deployment,
+    DeploymentOption: state.environment,
+    AppName: state.appname,
+    ImageName: state.image,
+    ports: state.port,
+    pods: state.pods,
+    maxUnavailable: state.maxUnavailable,
   });
+
+  const [inputAppName,setInputAppName] = useState(state.appname)
 
   // useEffect(()=>{
   //     if(state)
@@ -34,35 +39,47 @@ const EditOpenshiftDeployment = () => {
   //     }
   // },[])
 
-  // const handleSubmit = () => {
-  //     // alert('Data Submission Started')
-  //     // axios.post('http://localhost:8000/api/k8s',
-  //     // {
-  //     //     "service":"openshift",
-  //     //     "deployment":deploymentInfo.DeploymentType,
-  //     //     "environment":deploymentInfo.DeploymentOption,
-  //     //     "appname":deploymentInfo.AppName,
-  //     //     "image": deploymentInfo.ImageName,
-  //     //     "pods":deploymentInfo.pods,
-  //     //     "PortName":deploymentInfo.AppName,
-  //     //     "port": deploymentInfo.ports,
-  //     //     "userName":"aniket"
-  //     //   })
-  //     //   .then((res)=>{
-  //     //     alert('data submission completed')
-  //     //     console.log(res)
-  //     //     alert(res)
-  //     //     nevigate('/deployment/MyDeployments')
-  //     //   })
-  //     //   .catch(err=>{
-  //     //     console.log(err)
-  //     //   })
-  // }
+  const handleSubmit = () => {
+    setIsLoading(true)
+    alert("Data Submission Started");
+    axios
+      .post("http://localhost:8000/api/k8s", {
+        service: "openshift",
+        deployment: deploymentInfo.DeploymentType,
+        environment: deploymentInfo.DeploymentOption,
+        appname: deploymentInfo.AppName,
+        image: deploymentInfo.ImageName,
+        pods: deploymentInfo.pods,
+        PortName: deploymentInfo.AppName,
+        port: deploymentInfo.ports,
+        userName: "aniket",
+      })
+      .then((res) => {
+        setIsLoading(false)
+        alert("App Updated Successfull");
+        console.log(res);
+        alert(`Application Url is: ${res.data.Routeurl}`);
+        navigate("/deployment/MyDeployments");
+      })
+      .catch((err) => {
+        setIsLoading(false)
+        alert(err)
+        console.log(err);
+      });
+  };
 
   return (
     <div className="edit-deployAppOpenShift-homePage">
       <Navbar />
+      {/* {`${state.deployment} ${state.environment} ${state.appname}  ${state.image} ${state.port} ${state.pods} ${state.maxUnavailable}`} */}
       {`${deploymentInfo.DeploymentType} ${deploymentInfo.DeploymentOption} ${deploymentInfo.AppName}  ${deploymentInfo.ImageName} ${deploymentInfo.ports} ${deploymentInfo.pods} ${deploymentInfo.maxUnavailable}`}
+      {isLoading ? 
+          <Box className='edit-OPenshiftLoader' sx={{ display: 'flex' }}>
+          <CircularProgress />
+          <p>Loading... </p>
+          <p>Do Not Refresh the Page</p>
+        </Box>
+        :
       <div className="edit-deployAppOpenShift-mainPage">
           <div className="edit-deployAppOpenShift-service-type">
             <span>SERVICE TYPE:</span>
@@ -85,7 +102,7 @@ const EditOpenshiftDeployment = () => {
                       maxUnavailable: "",
                     });
                   }}
-                  // value={state.deployment}
+                  value={deploymentInfo.DeploymentType}
                 >
                   <MenuItem value={"bluegreen"}>Blue Green</MenuItem>
                   <MenuItem value={"Rolling Update"}>Rolling Update</MenuItem>
@@ -94,10 +111,8 @@ const EditOpenshiftDeployment = () => {
               </FormControl>
             </div>
             {
-              deploymentInfo.DeploymentType === "bluegreen" && (
-                //   ||
-                //     (
-                //         state.deployment === "bluegreen"
+              deploymentInfo.DeploymentType === "bluegreen"  && 
+                    (
                 <div className="options-according-to-deployment-type">
                   <h3>Option</h3>
                   <FormControl
@@ -114,7 +129,7 @@ const EditOpenshiftDeployment = () => {
                           DeploymentOption: e.target.value,
                         })
                       }
-                      // value={state.environment}
+                      value={deploymentInfo.DeploymentOption}
                     >
                       <MenuItem value={"blue"}>Blue</MenuItem>
                       <MenuItem value={"green"}>Green</MenuItem>
@@ -136,7 +151,7 @@ const EditOpenshiftDeployment = () => {
                   AppName: e.target.value,
                 })
               }
-              // value={state.appname}
+              value={deploymentInfo.AppName}
               name=""
               id=""
             />
@@ -152,7 +167,7 @@ const EditOpenshiftDeployment = () => {
                   ImageName: e.target.value,
                 })
               }
-              //  value={state.image}
+               value={deploymentInfo.ImageName}
               name=""
               id=""
             />
@@ -165,7 +180,7 @@ const EditOpenshiftDeployment = () => {
               onChange={(e) =>
                 setDeploymentInfo({ ...deploymentInfo, ports: e.target.value })
               }
-              // value={state.port}
+              value={deploymentInfo.ports}
               name=""
               id=""
             />
@@ -178,7 +193,7 @@ const EditOpenshiftDeployment = () => {
               onChange={(e) =>
                 setDeploymentInfo({ ...deploymentInfo, pods: e.target.value })
               }
-              // value={state.pods}
+              value={deploymentInfo.pods}
               name=""
               id=""
             />
@@ -195,6 +210,7 @@ const EditOpenshiftDeployment = () => {
                     maxUnavailable: e.target.value,
                   })
                 }
+                value={deploymentInfo.maxUnavailable}
                 name=""
                 id=""
               />
@@ -213,13 +229,14 @@ const EditOpenshiftDeployment = () => {
         <Button
           className="edit-deployAppOpenShift-Submit-Button"
           color="primary"
-          // onClick={()=>handleSubmit()}
+          onClick={()=>handleSubmit()}
           size="lg"
           variant="solid"
         >
           Submit
         </Button>
       </div>
+    }
     </div>
   );
 };

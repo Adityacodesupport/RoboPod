@@ -31,7 +31,7 @@ const App = () => {
           <Route exact path='/deployment/deploy-app-aws' element={<DeployAppAWS />}></Route>
           <Route exact path='/deployment/deploy-app-openshift' element={<DeployAppOpenShift />}></Route>
           <Route exact path='/deployment/MyDeployments' element={<MyDeployments />}></Route>
-          <Route exact path='/deployment/edit-openshift-deployment' element={<MyDeployments />}></Route>
+          <Route exact path='/deployment/edit-openshift-deployment' element={<EditOpenshiftDeployment />}></Route>
         </Routes>
       </Router>
     </div>
