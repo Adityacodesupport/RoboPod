@@ -11,7 +11,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const DeployAppOpenShift = () => {
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
 
   const [deploymentInfo, setDeploymentInfo] = useState({
     service: "open source",
@@ -42,7 +42,7 @@ const DeployAppOpenShift = () => {
         alert("data submission completed");
         console.log(res);
         alert(res.Routeurl);
-        nevigate("/deployment/MyDeployments");
+        navigate("/deployment/MyDeployments");
       })
       .catch((err) => {
         console.log(err);
