@@ -17,7 +17,6 @@ const MyDeployments = () => {
 
   // Get The Data After First Load
   useEffect(() => {
-<<<<<<< HEAD
     // Make a GET request using Axios
     axios.get('http://localhost:3001/api/data/aniket')
       .then((res) => {
@@ -36,7 +35,6 @@ const MyDeployments = () => {
   // ]
 
   // setAppData(demoData)
-=======
     // Demo Data For Frontend 
     const demoData = [
       { 
@@ -66,7 +64,6 @@ const MyDeployments = () => {
         userName: "aniket" 
       }
     ];
->>>>>>> cbeabc2a8770fbf195495f320c621c7dd7e7b871
 
     setAppData(demoData);
   }, []);
