@@ -1,70 +1,69 @@
+
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../components/Navbar/Navbar";
+import Popup from '../../components/Popup/Popup'; 
+// Import the Popup component
 import "./MyDeployments.css"; // Import the CSS file for styling
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
 const MyDeployments = () => {
-  const nevigate = useNavigate()
-
+  const navigate = useNavigate();
 
   // Get Service Data
-  const [appData,setAppData]=useState([])
+  const [appData, setAppData] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedAppData, setSelectedAppData] = useState(null);
 
   // Get The Data After First Load
   useEffect(() => {
-    // Make a GET request using Axios
-    // axios.get('http://localhost:3001/api/data/aniket')
-    //   .then((res) => {
-    //     // Clear the existing state and set the new data
-    //     setAppData(res.data);
-    //     console.log({ responseData: res.data });
-    //     console.log(appData)
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
     // Demo Data For Frontend 
-    const demoData = [ { service: "openshift", deployment: "recreate", appname: "nginx-recreate-final", image: "quay.io/practicalopenshift/hello-world", pods: "3", PortName: "first", port: "8080", userName: "aniket" },
-    { service: "openshift", deployment: "recreate", appname: "nginx-recreate-final", image: "quay.io/practicalopenshift/hello-world", pods: "3", PortName: "first", port: "8080", userName: "aniket" }
-  ]
+    const demoData = [
+      { 
+        service: "openshift", 
+        deployment: "recreate", 
+        appname: "nginx-recreate-final-distination-ok", 
+        image: "quay.io/practicalopenshift/hello-world", 
+        pods: [
+          { podName: "pod1", podStatus: "Running", creationTime: "2022-01-10T12:30:00Z" },
+          { podName: "pod2", podStatus: "Pending", creationTime: "2022-01-10T13:00:00Z" }
+        ],
+        PortName: "first", 
+        port: "8080", 
+        userName: "aniket" 
+      },
+      { 
+        service: "openshift", 
+        deployment: "recreate", 
+        appname: "nginx-recreate-final", 
+        image: "quay.io/practicalopenshift/hello-world", 
+        pods: [
+          { podName: "pod3", podStatus: "Running", creationTime: "2022-01-10T14:00:00Z" },
+          { podName: "pod4", podStatus: "Running", creationTime: "2022-01-10T14:30:00Z" }
+        ],
+        PortName: "first", 
+        port: "8080", 
+        userName: "aniket" 
+      }
+    ];
 
-  setAppData(demoData)
-
+    setAppData(demoData);
   }, []);
 
   const handleDelete = (row) => {
-    const data = row
-    console.log(data)
-    axios.delete('http://localhost:3001/api/delete',
-    {
-      data
-    })
-    .then((res)=>{
-    alert(res.message)
-    console.log(res.message)
-  })
-    .catch((err)=>console.log(err.message))
-  }
-
+    const data = row;
+    console.log(data);
+    axios.delete('http://localhost:3001/api/delete', { data })
+      .then((res) => {
+        alert(res.message);
+        console.log(res.message);
+      })
+      .catch((err) => console.log(err.message));
+  };
 
   return (
     <div>
       <Navbar />
-      {appData.map(data=>console.log(data))}
-      <p className='user-profile-page'>
-        The user profile page serves as a comprehensive dashboard, presenting
-        key details such as the number of pods currently active and the names of
-        associated applications. Users gain insights into their deployed
-        resources, providing an overview of active infrastructure and deployed
-        applications
-      </p>
-      <div className='running-pod-status'>
-        YOU CAN SEE RUNNING POD STATUS BY CLICKING ON SERVICE NAME
-      </div>
       <div className="data-table-container">
         <div className="data-table">
           <table>
@@ -84,50 +83,61 @@ const MyDeployments = () => {
               </tr>
             </thead>
             <tbody>
-              {/* Sample data row, you should map your data and create rows dynamically */}
-
-              {
-                appData.map(row=>{return(
-                  <tr>
-                  <td>{row.service}</td>
-                  <td>{row.deployment}</td>
-                  <td>{row.environment?row.environment:'NoNe'}</td>
-                  <td>{row.appname}</td>
-                  <td>{row.image}</td>
-                  <td>{row.pods}</td>
-                  <td>{row.port}</td>
-                  <td>{row.userName}</td>
-                  <td>{row.maxUnavailable?row.maxUnavailable:'NoNe'}</td>
-                  <td>
-                    <button className="delete-button"
-                    onClick={()=>handleDelete(row)}
+              {appData.map(row => {
+                return (
+                  <tr key={row.appname}>
+                    <td>{row.service}</td>
+                    <td>{row.deployment}</td>
+                    <td>{row.environment ? row.environment : 'NoNe'}</td>
+                    <td
+                      className="show-popup-text"
+                      onClick={() => {
+                        setShowPopup(true);
+                        setSelectedAppData(row);
+                      }}
                     >
-                      {/* Add your delete functionality here */}
-                      DELETE
-                    </button>
-                  </td>
-                  <td>
-                    <button className="edit-button" onClick={()=>{
-                      
-                      if(row.service==='openshift') 
-                      {
-                        nevigate('/deployment/edit-openshift-deployment',{state:row})
-                      }
-                      
+                      {row.appname}
+                    </td>
+                    <td>{row.image}</td>
+                    <td>{row.pods.length}</td>
+                    <td>{row.port}</td>
+                    <td>{row.userName}</td>
+                    <td>{row.maxUnavailable ? row.maxUnavailable : 'NoNe'}</td>
+                    <td>
+                      <button className="delete-button"
+                        onClick={() => handleDelete(row)}>
+                        DELETE
+                      </button>
+                    </td>
+                    <td>
+                      <button className="edit-button" onClick={() => {
+                        if (row.service === 'openshift') {
+                          navigate('/deployment/edit-openshift-deployment', { state: row });
+                        }
                       }}>
-                      {/* Add your edit functionality here */}
-                      EDIT
-                    </button>
-                  </td>
-                </tr>)
-                })
-              }
+                        EDIT
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
       </div>
+
+      <Popup
+        selectedAppData={selectedAppData}
+        onClose={() => {
+          setShowPopup(false);
+          setSelectedAppData(null);
+        }}
+      />
     </div>
   );
 };
 
 export default MyDeployments;
+
+
+

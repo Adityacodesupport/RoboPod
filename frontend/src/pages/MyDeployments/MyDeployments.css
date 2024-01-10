@@ -15,8 +15,8 @@ th,
 td {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd; /* Add a border between rows */
-  border-right: 1px solid #ddd; /* Add a border between columns */
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 
 th {
@@ -35,15 +35,15 @@ tr:nth-child(even) {
   margin: 20px;
   display: inline-block;
 }
+
 .user-profile-page {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
-  width: 1377px;
-  height: 8px;
-  margin: 10px 0 0 26px;;
-  font-family: ubuntu;
+  width: 100%;
+  margin: 10px 0 0 26px;
+  font-family: 'ubuntu', sans-serif;
   color: #000000;
   font-size: 19px;
   font-weight: 400;
@@ -51,15 +51,12 @@ tr:nth-child(even) {
   text-align: left;
   z-index: 31;
 }
+
 .running-pod-status {
   display: block;
   position: relative;
-  height: 16px;
   margin: 63px 0 0 23px;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-    "Source Han Sans CN", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #000000;
   font-size: 15px;
   font-weight: 600;
@@ -68,25 +65,20 @@ tr:nth-child(even) {
   white-space: nowrap;
   z-index: 32;
 }
-.edit-button {
+
+.edit-button,
+.delete-button,
+.show-popup-text {
   color: #0d99ff;
   background-color: white;
   border-radius: 5px;
   font-weight: bold;
-}
-.delete-button {
-  color: #0d99ff;
-  background-color: white;
-  border-radius: 5px;
-  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition effect */
 }
 
-.delete-button:hover{
-    color:white;
-    background-color: #0d99ff;
-}
-
-.edit-button:hover{
-    color:white;
-    background-color: #0d99ff;
+.edit-button:hover,
+.delete-button:hover,
+.show-popup-text:hover {
+  color: white;
+  background-color: #0d99ff;
 }
