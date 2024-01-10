@@ -9,10 +9,14 @@ import { useState } from "react";
 import "./DeployAppOpenshift.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+import Alert from '@mui/material/Alert';
 
 const DeployAppOpenShift = () => {
   const nevigate = useNavigate();
 
+  const [isLoading,setIsLoading] = useState(false)
   const [deploymentInfo, setDeploymentInfo] = useState({
     service: "open source",
     DeploymentType: "",
@@ -25,6 +29,7 @@ const DeployAppOpenShift = () => {
   });
 
   const handleSubmit = () => {
+    setIsLoading(true)
     alert("Data Submission Started");
     axios
       .post("http://localhost:8000/api/k8s", {
@@ -39,12 +44,16 @@ const DeployAppOpenShift = () => {
         userName: "aniket",
       })
       .then((res) => {
+        setIsLoading(false)
         alert("data submission completed");
         console.log(res);
-        alert(res.Routeurl);
+        alert(`Your Application Url Is: ${res.data.Routeurl}`);
+        // <Alert severity="success">{`Your Application Url Is: ${res.data.Routeurl}`}</Alert>
         nevigate("/deployment/MyDeployments");
       })
       .catch((err) => {
+        setIsLoading(false)
+        alert(err)
         console.log(err);
       });
   };
@@ -53,6 +62,13 @@ const DeployAppOpenShift = () => {
     <div className="deployAppOpenShift-homePage">
       <Navbar />
       {`${deploymentInfo.DeploymentType} ${deploymentInfo.DeploymentOption} ${deploymentInfo.AppName}  ${deploymentInfo.ImageName} ${deploymentInfo.ports} ${deploymentInfo.pods} ${deploymentInfo.maxUnavailable}`}
+      {isLoading ? 
+          <Box className='OPenshiftLoader' sx={{ display: 'flex' }}>
+          <CircularProgress />
+          <p>Loading... </p>
+          <p>Do Not Refresh the Page</p>
+        </Box>
+      :
       <div className="deployAppOpenShift-mainPage">
         <div className="deployAppOpenShift-service-type">
           <span>SERVICE TYPE:</span>
@@ -194,7 +210,7 @@ const DeployAppOpenShift = () => {
         >
           Submit
         </Button>
-      </div>
+      </div>}
     </div>
   );
 };

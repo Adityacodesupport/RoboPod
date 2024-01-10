@@ -16,16 +16,23 @@ const MyDeployments = () => {
   // Get The Data After First Load
   useEffect(() => {
     // Make a GET request using Axios
-    axios.get('http://localhost:3001/api/data/aniket')
-      .then((res) => {
-        // Clear the existing state and set the new data
-        setAppData(res.data);
-        console.log({ responseData: res.data });
-        console.log(appData)
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // axios.get('http://localhost:3001/api/data/aniket')
+    //   .then((res) => {
+    //     // Clear the existing state and set the new data
+    //     setAppData(res.data);
+    //     console.log({ responseData: res.data });
+    //     console.log(appData)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+
+    // Demo Data For Frontend 
+    const demoData = [ { service: "openshift", deployment: "recreate", appname: "nginx-recreate-final", image: "quay.io/practicalopenshift/hello-world", pods: "3", PortName: "first", port: "8080", userName: "aniket" },
+    { service: "openshift", deployment: "recreate", appname: "nginx-recreate-final", image: "quay.io/practicalopenshift/hello-world", pods: "3", PortName: "first", port: "8080", userName: "aniket" }
+  ]
+
+  setAppData(demoData)
 
   }, []);
 
