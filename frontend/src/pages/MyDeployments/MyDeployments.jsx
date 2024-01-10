@@ -32,7 +32,7 @@ const MyDeployments = () => {
     { service: "openshift", deployment: "recreate", appname: "nginx-recreate-final", image: "quay.io/practicalopenshift/hello-world", pods: "3", PortName: "first", port: "8080", userName: "aniket" }
   ]
 
-  // setAppData(demoData)
+  setAppData(demoData)
 
   }, []);
 
