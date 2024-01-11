@@ -4,8 +4,11 @@ import "./Popup.css"; // Import the CSS file for styling
 import axios from "axios";
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+import { useNavigate } from "react-router-dom";
 
 const Popup = ({ selectedAppData,appName, onClose }) => {
+  const navigate = useNavigate()
+  const [podDetails,setPodDetails] = useState(null)
   const [progress,setProgress]=useState(0)
   if (!selectedAppData) return null;
 
@@ -25,6 +28,8 @@ const Popup = ({ selectedAppData,appName, onClose }) => {
       setProgress(0)
       alert('success')
       console.log(res.data)
+      setPodDetails(res.data)
+      navigate('/pod/pod-details',{state:res.data})
     })
     .catch((err)=>{
       clearInterval(timer);

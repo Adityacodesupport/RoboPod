@@ -14,6 +14,7 @@ import DeployAppAWS from './pages/Deployment/DeployAppAWS/DeployAppAWS'
 import DeployAppOpenShift from './pages/Deployment/DeployAppOpenshift/DeployAppOpenshift'
 import MyDeployments from './pages/MyDeployments/MyDeployments'
 import EditOpenshiftDeployment from './pages/Deployment/DeployAppOpenshift/EditOpenshiftDeployment/EditOpenshiftDeployment'
+import PodDetails from './components/PodDetails/PodDetails'
 
 const App = () => {
   // const isLoggedIn = useSelector((state)=>state.user.LoggedIn
@@ -32,6 +33,7 @@ const App = () => {
           <Route exact path='/deployment/deploy-app-openshift' element={<DeployAppOpenShift />}></Route>
           <Route exact path='/deployment/MyDeployments' element={<MyDeployments />}></Route>
           <Route exact path='/deployment/edit-openshift-deployment' element={<EditOpenshiftDeployment />}></Route>
+          <Route exact path='/pod/pod-details' element={<PodDetails />}></Route>
         </Routes>
       </Router>
     </div>
