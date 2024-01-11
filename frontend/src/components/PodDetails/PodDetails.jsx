@@ -64,12 +64,12 @@ const PodDetails = () => {
 
 
 
-        <div className="pod-info-item">
+        {/* <div className="pod-info-item">
           <strong>Image Pull Secrets:</strong>
           {state.spec.imagePullSecrets.map((pullSecret, index) => (
             <span key={index}>{pullSecret.name}, </span>
           ))}
-        </div>
+        </div> */}
 
         <hr />
 

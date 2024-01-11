@@ -236,7 +236,16 @@ const EditOpenshiftDeployment = () => {
           size="lg"
           variant="solid"
         >
-          Submit
+          Edit
+        </Button>
+        <Button
+          className="edit-deployAppOpenShift-Submit-Button"
+          color="primary"
+          onClick={()=>handleSubmit()}
+          size="lg"
+          variant="solid"
+        >
+          Cancle
         </Button>
       </div>
     }

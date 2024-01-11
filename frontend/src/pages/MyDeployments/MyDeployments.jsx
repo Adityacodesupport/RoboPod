@@ -178,7 +178,15 @@ const MyDeployments = () => {
                     <td>{row.port}</td>
                     <td>{row.userName}</td>
                     <td>{row.maxUnavailable ? row.maxUnavailable : '-'}</td>
-                    <td><CopyButton fontSize={'small'} textToCopy={row.url} /></td>
+                    <td>{row.status==='success'
+                    ?
+                       <CopyButton fontSize={'small'} textToCopy={row.url} />
+                    :
+                        <div onClick={()=>alert(row.error_msg)} style={{"color":"red","cursor":"pointer"}}>
+                          {row.status}
+                        </div>
+                    
+                    }</td>
                     <td>
                       <button className="delete-button"
                         onClick={() => handleDelete(row)}>
