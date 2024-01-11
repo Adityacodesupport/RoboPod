@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import "./Popup.css"; // Import the CSS file for styling
 import axios from "axios";
-import Box from "@mui/material/Box";
-import LinearProgress from "@mui/material/LinearProgress";
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
-const Popup = ({ selectedAppData, appName, onClose }) => {
-  const [progress, setProgress] = useState(0);
+const Popup = ({ selectedAppData,appName, onClose }) => {
+  const [progress,setProgress]=useState(0)
   if (!selectedAppData) return null;
 
   const getPodDetail = ({ podName }) => {
@@ -19,20 +19,19 @@ const Popup = ({ selectedAppData, appName, onClose }) => {
         return Math.min(oldProgress + diff, 100);
       });
     }, 250);
-    axios
-      .get(`http://localhost:3001/api/desc_pod/${podName}`)
-      .then((res) => {
-        clearInterval(timer);
-        setProgress(0);
-        alert("success");
-        console.log(res.data);
-      })
-      .catch((err) => {
-        clearInterval(timer);
-        setProgress(0);
-        alert(err.message);
-      });
-  };
+    axios.get(`http://localhost:3001/api/desc_pod/${podName}`)
+    .then((res)=>{
+      clearInterval(timer);
+      setProgress(0)
+      alert('success')
+      console.log(res.data)
+    })
+    .catch((err)=>{
+      clearInterval(timer);
+      setProgress(0)      
+      alert(err.message)
+    })
+  }
 
   return (
     <div className="popup-container">

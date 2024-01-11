@@ -1,0 +1,76 @@
+.pod-details {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   }
+   
+   .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+   }
+   
+   .pod-info-item {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    width: 40%;
+  }
+
+  .pod-info-lables{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    background-color: lavender;
+  }
+
+    .pod-details-cancle-button {
+        left: 50%;
+        top: 13px;
+      }
+
+  .pod-details-lable {
+    margin-left: 30px;
+  }
+
+    .pod-details-wrapper {
+        display: flex;
+        gap: 10rem;
+      }
+
+  .pod-container-item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .pod-container-item div {
+    display: flex;
+    gap: 9px;
+  }
+   
+   .conditions-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: black;
+    margin-top: 10px;
+   }
+   
+   .conditions-table th,
+   .conditions-table td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    color: black;
+    text-align: left;
+   }
+   
+   .conditions-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+   }
+   
+   .Lables-Right-Items{
+
+   }

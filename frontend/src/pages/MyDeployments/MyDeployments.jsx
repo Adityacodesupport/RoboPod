@@ -8,6 +8,24 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+import Button from '@mui/material/Button';
+import CopyToClipboard from 'react-copy-to-clipboard';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+function CopyButton({ textToCopy }) {
+  const handleCopy = () => {
+    // You can perform any additional actions on copy if needed
+    console.log('Text copied to clipboard:', textToCopy);
+  };
+
+  return (
+    <CopyToClipboard text={textToCopy} onCopy={handleCopy}>
+      <Button variant="outlined" color="primary">
+        <ContentCopyIcon />
+      </Button>
+    </CopyToClipboard>
+  );
+}
 
 const MyDeployments = () => {
   const navigate = useNavigate();
@@ -108,6 +126,7 @@ const MyDeployments = () => {
                 <th>PORTS</th>
                 <th>USER NAME</th>
                 <th>MAX UNAVAILABLE</th>
+                <th>Copy Url</th>
                 <th>DELETE</th>
                 <th>EDIT</th>
               </tr>
@@ -159,6 +178,15 @@ const MyDeployments = () => {
                     <td>{row.port}</td>
                     <td>{row.userName}</td>
                     <td>{row.maxUnavailable ? row.maxUnavailable : '-'}</td>
+                    <td>{row.status==='success'
+                    ?
+                       <CopyButton fontSize={'small'} textToCopy={row.url} />
+                    :
+                        <div onClick={()=>alert(row.error_msg)} style={{"color":"red","cursor":"pointer"}}>
+                          {row.status}
+                        </div>
+                    
+                    }</td>
                     <td>
                       <button className="delete-button"
                         onClick={() => handleDelete(row)}>

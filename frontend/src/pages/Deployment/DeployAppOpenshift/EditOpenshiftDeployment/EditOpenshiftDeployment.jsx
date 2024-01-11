@@ -53,7 +53,8 @@ const EditOpenshiftDeployment = () => {
         pods: deploymentInfo.pods,
         PortName: deploymentInfo.AppName,
         port: deploymentInfo.ports,
-        userName: "aniket",
+        maxUnavailable:deploymentInfo.maxUnavailable,
+        userName: "aniket"
       })
       .then((res) => {
         setIsLoading(false)
@@ -107,7 +108,7 @@ const EditOpenshiftDeployment = () => {
                   value={deploymentInfo.DeploymentType}
                 >
                   <MenuItem value={"bluegreen"}>Blue Green</MenuItem>
-                  <MenuItem value={"Rolling Update"}>Rolling Update</MenuItem>
+                  <MenuItem value={"rolling"}>Rolling Update</MenuItem>
                   <MenuItem value={"recreate"}>Recreate</MenuItem>
                 </Select>
               </FormControl>
@@ -200,7 +201,7 @@ const EditOpenshiftDeployment = () => {
               id=""
             />
           </div>
-          {deploymentInfo.DeploymentType === "Rolling Update" && (
+          {deploymentInfo.DeploymentType === "rolling" && (
             <div className="edit-deployAppOpenShift-Max-Unavailable">
               <h3>Max Unavailable:</h3>
               <input
@@ -235,7 +236,16 @@ const EditOpenshiftDeployment = () => {
           size="lg"
           variant="solid"
         >
-          Submit
+          Edit
+        </Button>
+        <Button
+          className="edit-deployAppOpenShift-Submit-Button"
+          color="primary"
+          onClick={()=>handleSubmit()}
+          size="lg"
+          variant="solid"
+        >
+          Cancle
         </Button>
       </div>
     }

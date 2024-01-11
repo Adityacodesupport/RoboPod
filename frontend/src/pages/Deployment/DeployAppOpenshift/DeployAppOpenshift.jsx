@@ -41,7 +41,8 @@ const DeployAppOpenShift = () => {
         pods: deploymentInfo.pods,
         PortName: deploymentInfo.AppName,
         port: deploymentInfo.ports,
-        userName: "aniket",
+        maxUnavailable: deploymentInfo.maxUnavailable,
+        userName: "aniket"
       })
       .then((res) => {
         setIsLoading(false)
@@ -92,7 +93,7 @@ const DeployAppOpenShift = () => {
                 }}
               >
                 <MenuItem value={"bluegreen"}>Blue Green</MenuItem>
-                <MenuItem value={"Rolling Update"}>Rolling Update</MenuItem>
+                <MenuItem value={"rolling"}>Rolling Update</MenuItem>
                 <MenuItem value={"recreate"}>Recreate</MenuItem>
               </Select>
             </FormControl>
@@ -174,7 +175,7 @@ const DeployAppOpenShift = () => {
             id=""
           />
         </div>
-        {deploymentInfo.DeploymentType === "Rolling Update" && (
+        {deploymentInfo.DeploymentType === "rolling" && (
           <div className="deployAppOpenShift-Max-Unavailable">
             <h3>Max Unavailable:</h3>
             <input
