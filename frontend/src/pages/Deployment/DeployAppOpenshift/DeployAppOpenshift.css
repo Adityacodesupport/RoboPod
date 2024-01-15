@@ -1,26 +1,26 @@
-.deployAppOpenShift-homePage{
-    height:100vh;
-    /* background-color:red; */
+
+.deployAppOpenShift-homePage {
+    height: 100vh;
 }
 
-.deployAppOpenShift-mainPage{
+.deployAppOpenShift-mainPage {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: white; 
+    background-color: white;
     height: 84%;
     gap: 10px;
     padding-top: 25px;
 }
 
-.deployAppOpenShift-mainPage h3{
+.deployAppOpenShift-mainPage h3 {
     font-family: 'Inter', sans-serif;
     font-family: 'Nunito Sans', sans-serif;
     font-size: medium;
 }
 
-.deployAppOpenShift-service-type{
+.deployAppOpenShift-service-type {
     width: 1000px;
     display: flex;
     gap: 20px;
@@ -28,23 +28,24 @@
     font-family: sans-serif;
 }
 
-.deployAppOpenShift-Deployment-type{
+.deployAppOpenShift-Deployment-type {
     display: flex;
     gap: 73px;
     width: 1000px;
 }
 
-.deployAppOpenShift-App-Name{
+.deployAppOpenShift-App-Name {
     display: flex;
     gap: 59px;
     align-items: center;
     width: 1000px;
 }
 
-.deployAppOpenShift-App-Name h3{
+.deployAppOpenShift-App-Name h3 {
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .deployAppOpenShift-App-Name input {
     width: 30%;
     height: 35px;
@@ -52,56 +53,57 @@
     border-radius: 9px;
 }
 
-.deployAppOpenShift-Image-Name{
+.deployAppOpenShift-Image-Name {
     display: flex;
     gap: 42px;
     align-items: center;
     width: 1000px;
 }
-.deployAppOpenShift-Image-Name h3{
+
+.deployAppOpenShift-Image-Name h3 {
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.deployAppOpenShift-Image-Name input{
+.deployAppOpenShift-Image-Name input {
     width: 30%;
     height: 35px;
     border: 2px solid black;
     border-radius: 9px;
 }
 
-.deployAppOpenShift-Port-Number{
+.deployAppOpenShift-Port-Number {
     display: flex;
     gap: 113px;
     align-items: center;
     width: 1000px;
 }
 
-.deployAppOpenShift-Port-Number h3{
+.deployAppOpenShift-Port-Number h3 {
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.deployAppOpenShift-Port-Number input{
+.deployAppOpenShift-Port-Number input {
     width: 30%;
     height: 35px;
     border: 2px solid black;
     border-radius: 9px;
 }
 
-.deployAppOpenShift-Pods-Number{
+.deployAppOpenShift-Pods-Number {
     display: flex;
     gap: 112px;
     align-items: center;
-    width: 1000px;
+    width: 1005px;
 }
 
-.deployAppOpenShift-Pods-Number h3{
+.deployAppOpenShift-Pods-Number h3 {
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.deployAppOpenShift-Pods-Number input{
+.deployAppOpenShift-Pods-Number input {
     width: 30%;
     height: 35px;
     border: 2px solid black;
@@ -113,16 +115,16 @@
     gap: 10px;
     align-items: center;
     width: 1000px;
-    /* background-color: aquamarine; */
 }
 
-.deployAppOpenShift-Max-Unavailable input{
+.deployAppOpenShift-Max-Unavailable input {
     width: 30%;
     height: 35px;
     border: 2px solid black;
     border-radius: 9px;
 }
-.deployAppOpenShift-Max-Unavailable h3{
+
+.deployAppOpenShift-Max-Unavailable h3 {
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -135,35 +137,35 @@
     border: black solid 3px;
     color: white;
     border-radius: 10px;
-    border: 1px solid #000;
-    background: #0D99FF;
     cursor: pointer;
+    background: #0D99FF;
+    border: 1px solid #000;
 }
 
-
-.deployAppOpenShift-mainPage button:hover{
-    background-color: #0d99ff
+.deployAppOpenShift-mainPage button:hover {
+    background-color: #0d99ff;
 }
+
 .page-info-openshift {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     position: absolute;
     width: 477px;
-    height: 389px;
-    top: 170px;
-    left: 768px;
+    height: 316px;
+    top: 141px;
+    left: 800px;
     font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
-    color: #000000;
     font-size: 18px;
     font-weight: normal;
     line-height: 29.045px;
     text-align: left;
     z-index: auto;
-  }
+    color: black;
+    border-radius: 8px;
+}
 
-.OPenshiftLoader{
-    /* background-color: #0d99ff; */
+.OPenshiftLoader {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -171,4 +173,59 @@
     margin-top: 13%;
     margin-left: 40%;
     width: 250px;
+}
+
+/* Add media queries for responsive design */
+@media only screen and (max-width: 1000px) {
+    .deployAppOpenShift-mainPage {
+        padding-top: 15px;
+    }
+
+    .deployAppOpenShift-service-type,
+    .deployAppOpenShift-Deployment-type,
+    .deployAppOpenShift-App-Name,
+    .deployAppOpenShift-Image-Name,
+    .deployAppOpenShift-Port-Number,
+    .deployAppOpenShift-Pods-Number,
+    .deployAppOpenShift-Max-Unavailable {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .deployAppOpenShift-Service-Type input,
+    .deployAppOpenShift-Deployment-type input,
+    .deployAppOpenShift-App-Name input,
+    .deployAppOpenShift-Image-Name input,
+    .deployAppOpenShift-Port-Number input,
+    .deployAppOpenShift-Pods-Number input,
+    .deployAppOpenShift-Max-Unavailable input {
+        width: 100%;
+    }
+
+    .deployAppOpenShift-Deployment-type {
+        gap: 15px;
+    }
+
+    .deployAppOpenShift-Port-Number,
+    .deployAppOpenShift-Pods-Number,
+    .deployAppOpenShift-Max-Unavailable {
+        gap: 15px;
+    }
+
+    .deployAppOpenShift-mainPage button {
+        width: 100%;
+    }
+
+    .page-info-openshift {
+        width: 100%;
+        left: 0;
+        top: -50px; /* Adjusted top for overlap */
+        z-index: 1; /* Ensure it's above other elements */
+    }
+
+    .OPenshiftLoader {
+        margin-left: 0;
+    }
 }

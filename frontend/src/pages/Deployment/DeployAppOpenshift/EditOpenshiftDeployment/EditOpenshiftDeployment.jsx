@@ -219,7 +219,7 @@ const EditOpenshiftDeployment = () => {
               />
             </div>
           )}
-        <span className="page-info-openshift">
+        <span className="edit-page-info-openshift">
           In OpenShift, different deployment strategies, like Blue-Green and
           Rolling, offer unique approaches to updating pods Blue-Green
           deployment maintains two identical environments, enabling seamless
@@ -245,7 +245,7 @@ const EditOpenshiftDeployment = () => {
           size="lg"
           variant="solid"
         >
-          Cancle
+          Cancel
         </Button>
       </div>
     }
